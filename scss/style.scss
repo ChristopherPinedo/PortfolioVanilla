@@ -1,0 +1,224 @@
+@use 'utils';
+@use 'components';
+
+/* ********** Site Styles ********** */
+.about{
+  article {
+    margin-bottom: 2rem;
+    aside {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.services{
+  background-color: utils.$gray-dark-color;
+  text-align: center;
+  overflow-x: hidden;
+  height: 100vh;
+  padding: 1rem;
+}
+
+  .contact-card {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 100%;
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .contact-card > svg {
+    width: 2rem;
+    height: 2rem;
+    fill: utils.$first-color;
+  }
+  
+  .contact-card > small {
+    margin-top: -1rem;
+  }
+  
+  .footer {
+    margin-bottom: utils.$header-height;
+    padding: 0.5rem;
+    text-align: center;
+    color: utils.$white-color;
+    background-color: utils.$third-color;
+  }
+  
+  .header {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: utils.$header-height;
+    background-color: utils.$second-color;
+  }
+  
+  .portfolio-card {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .portfolio-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .portfolio-card-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: utils.$first-alpha-color;
+    color: utils.$white-color;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .portfolio-card:hover .portfolio-card-info {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .portfolio-card-info > div {
+    padding: 1rem;
+    border: thin solid utils.$white-color;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .portfolio-modal {
+    padding: 1rem;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: utils.$white-color;
+  }
+  
+  .portfolio-modal h3 {
+    border-bottom: medium solid utils.$first-color;
+    margin: 1rem auto;
+    padding: 0.5rem 0;
+    color: utils.$title-color;
+  }
+  
+  .portfolio-details {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-auto-rows: 2rem;
+  }
+  
+  .portfolio-details b {
+    color: utils.$first-color;
+  }
+  
+  .service-card {
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .service-card h3 {
+    color: utils.$title-color;
+  }
+  
+  .service-card svg {
+    margin-bottom: 1.25rem;
+    fill: utils.$first-color;
+  }
+  
+  .social-media a {
+    padding: 0 0.4rem;
+    text-decoration: none;
+  }
+  
+  .social-media svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+@media screen and (min-width: 768px) {
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
+  }
+
+  .portfolio > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .portfolio .section-title {
+    grid-column: span 2;
+  }
+
+  .portfolio-modal {
+    max-width: 800px;
+    flex-direction: row;
+  }
+
+  .portfolio-info {
+    margin-left: 1rem;
+    align-self: center;
+  }
+
+  .services > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .services .section-title {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .contact-cards {
+    grid-template-columns: repeat(4, 24%);
+  }
+
+  .footer {
+    margin-bottom: 0;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    padding: 0.5rem;
+    height: calc(utils.$header-height - 0.5rem);
+  }
+
+  .portfolio > .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portfolio .section-title {
+    grid-column: span 3;
+  }
+
+  .services > .container {
+    grid-template-columns: repeat(3, 30%);
+  }
+
+  .services .section-title {
+    grid-column: span 3;
+  }
+}

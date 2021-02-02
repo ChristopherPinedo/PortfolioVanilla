@@ -1,0 +1,183 @@
+@use 'utils';
+
+/* code,
+pre {
+  background: utils.$gray-dark-color;
+  color: utils.$gray-light-color;
+} */
+
+/* ********** Accordion ********** */
+.accordion{
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 0; */
+  list-style: none;
+  height: 100%;
+  .d-none{
+    display: none;
+  }
+  li{
+    padding: 1rem;
+    width: 100%;
+    transition: transform 2s, height 2s;
+    height: 100px;
+  }
+  li:hover{
+    transform: translate(10px,10px);
+    height: 200px;
+  }
+  /* li:hover ~ li{
+    display: none;
+  } */
+}
+/* ********** Navigation ********** */
+.navigation {
+    .navigation-btn {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 901;
+        outline: none;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: utils.$second-color;
+        padding: 0;
+        .hamburger-inner, ::after, ::before{
+            z-index: 902;
+            background-color: utils.$first-color !important;
+        }
+    }
+    .navigation-list {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50vw;
+        z-index: 900;
+        display: flex;
+        flex-direction: column;
+        padding-top: 2rem;
+        background-color: utils.$second-color;
+        opacity: 0;
+        transition: transform .5s ease, opacity .5s ease;
+        transform: translate(100%, 0);
+        a {
+            padding: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: utils.$white-color;
+        }
+        a:hover {
+            color: utils.$white-color;
+            background-color: utils.$first-color;
+        }
+    }
+    .is-active {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+  
+  @media screen and (min-width: 1024px) {
+    .menu-btn {
+      display: none;
+    }
+  
+    .menu {
+      position: static;
+      width: auto;
+      flex-direction: row;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    .menu a {
+      padding: 0 1rem;
+    }
+  
+    .menu a:last-child {
+      padding-right: 0;
+    }
+  
+    .menu a:hover {
+      background-color: transparent;
+    }
+  }
+  /* ********** HeroImage ********** */
+    .hero-image {
+        background-image: utils.$hero-image;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: utils.$hero-attachment;
+        height: 100vh;
+        .hero-image-opacity {
+            width: 100%;
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: utils.$black-alpha-color;
+            .hero-image-content {
+                /* height: 50vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center; */
+                .hero-image-title {
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                    h1{
+                        font-size: 3rem;
+                        color: utils.$white-color;
+                    }
+                    hr{
+                        border-top: 1px dotted utils.$white-color;
+                    }
+                    h4{
+                        color: utils.$white-color !important;
+                    }
+                }
+            }
+        }
+    }
+
+/* ********** ProgressBar ********** */
+
+progress {
+    width: 100%;
+    height: 1rem;
+    background-color: utils.$gray-color;
+  }
+  
+  progress::-webkit-progress-bar {
+    background-color: utils.$gray-color;
+  }
+  
+  progress::-webkit-progress-value {
+    background-color: utils.$gray-dark-color;
+  }
+  
+  progress::-moz-progress-bar {
+    background-color: utils.$gray-dark-color;
+  }
+  
+  .progress {
+    margin: 1rem auto;
+  }
+  
+  .progress > p {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+  }
+    
+    
+    
+    
+  
